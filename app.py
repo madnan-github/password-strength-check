@@ -55,6 +55,31 @@ def generate_password(length):
 # Set the title of the app
 st.title("Simple Password Strength Checker and Generator")
 
+# Add custom CSS for background color (applies to both main app and sidebar)
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-color: #878f99;  /* Slate black background color */
+        color: white;              /* White text color for all content */
+    }
+    .stButton button {
+        color: black;              /* Black text for buttons */
+        background-color: #FFFF00; /* Yellow background for buttons */
+    }
+
+    header {
+        background-color: #878f99 !important;
+    }
+    .stSidebar {
+        background-color: #3e4444;  /* Slate black background color */
+        color: white;              /* White text color for all content */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 def main():
 
     # Add a sidebar for features and developer details
