@@ -31,7 +31,7 @@ def check_password_strength(password):
     
     # Return strength level
     if len(password) < 8:
-        return "Length should not be less than 8"
+        return "Length should not be less than 8 Characters"
     if strength == 5 and len(password) >= 8:
         return "Very Strong"
     elif strength >= 3 and len(password) >= 8:
