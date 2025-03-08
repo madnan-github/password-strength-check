@@ -69,7 +69,8 @@ st.markdown(
     }
 
     header {
-        background-color: #878f99 !important;
+        background-color: #878f99 !important;  /* Slate black background color */
+        color: white;              /* White text color for all content */
     }
     .stSidebar {
         background-color: #3e4444;  /* Slate black background color */
