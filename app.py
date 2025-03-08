@@ -1,5 +1,5 @@
 # Import necessary libraries
-import streamlit as st  # Streamlit for creating the web app
+import streamlit as st  
 import random  # For generating random passwords
 import string  # For string operations
 
@@ -10,6 +10,8 @@ def check_password_strength(password):
     # Check if password is at least 8 characters long
     if len(password) >= 8:
         strength += 1
+    # else:
+    #     st.warning("Password must be at least 8 characters long.")
     
     # Check if password contains at least one uppercase letter
     if any(char.isupper() for char in password):
@@ -28,20 +30,22 @@ def check_password_strength(password):
         strength += 1
     
     # Return strength level
-    if strength == 5:
+    if len(password) < 8:
+        return "Length should not be less than 8"
+    if strength == 5 and len(password) >= 8:
         return "Very Strong"
-    elif strength >= 3:
+    elif strength >= 3 and len(password) >= 8:
         return "Strong"
-    elif strength >= 2:
+    elif strength >= 2 and len(password) >= 8:
         return "Moderate"
     else:
         return "Weak"
 
 # Function to generate a random password
-def generate_password(length=12):
+def generate_password(length):
     # Define character sets
     characters = string.ascii_letters + string.digits + '!@#$%^&*()'
-    
+
     # Generate a random password
     password = ''.join(random.choice(characters) for _ in range(length))
     return password
